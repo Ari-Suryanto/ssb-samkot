@@ -1,0 +1,7 @@
+{
+    "name": "username/ssb-samkot",
+    "description": "composer require phpoffice/phpword",
+    "require": {
+        "phpoffice/phpword": "^1.3"
+    }
+}

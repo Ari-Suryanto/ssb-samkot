@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SSB SAMKOT</title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <div class="background"></div>
+        <nav>
+            <img src="logosamkot.png" alt="logo">
+            <ul>
+                <li><a href="Beranda.html">Beranda</a></li>
+                <li class="spacer"></li>
+                <li class="dropdown">
+                <a href="Beranda.html">Klub</a>
+                <ul class="dropdown-menu">
+                    <li><a href="Sejarah.html">Sejarah</a></li>
+                    <li><a href="Pengurus.html">Pengurus dan Pelatih</a></li>
+                    <li><a href="Tempat-Latihan.html">Tempat Latihan</a></li>
+                    <li><a href="Sponsor.html">Mitra dan Sponsor</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown">
+                <a href="Beranda.html">Tim</a>
+                    <ul class="dropdown-menu">
+                    <li><a href="U9.html">U-9</a></li>
+                    <li><a href="U10.html">U-10</a></li>
+                    <li><a href="U11.html">U-11</a></li>
+                    <li><a href="U12.html">U-12</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="JadwalLatihan.html">Jadwal Latihan</a></li>
+                <li><a href="Pendaftaran.html">Pendaftaran</a></li>
+                <li><a href="Jersey.html">Jersey</a></li>
+                <li class="spacer"></li>
+            </ul>
+        </nav>
+        <h1 id="Formulir" class="text-bordered">Formulir Pendaftaran</h1>
+        <p style="color: white; background-color: rgba(0, 0, 0, 0.6); text-shadow: 2px 2px 4px black; padding: 10px; border-radius: 5px; width: 700px; margin: 20px auto; text-align: center;">Silakan isi data pendaftaran calon pemain SSB Samkot di bawah ini dengan lengkap dan benar.</p>
+        <form id="registrasi" method="post" action="submit.php" enctype="multipart/form-data">
+            <label for="nama">Nama Lengkap :</label>
+            <input type="text" id="nama" name="nama" required><br><br>
+
+            <label for="tempatLahir">Tempat Lahir :</label>
+            <input type="text" id="tempatLahir" name="tempatLahir" required><br><br>
+
+            <label for="tanggalLahir">Tanggal Lahir :</label>
+            <input type="date" id="tanggalLahir" name="tanggalLahir" required><br><br>
+
+
+            <label for="alamat">Alamat Lengkap :</label>
+            <textarea name="alamat" id="alamat" rows="3" required></textarea><br><br>
+
+            <label for="namaOrtu">Nama Orang Tua :</label>
+            <input type="text" id="namaOrtu" name="namaOrtu" required><br><br>
+
+            <label for="noHp">No Hp/ WA Orang Tua:</label>
+            <input type="tel" id="noHp" name="noHp" pattern="[0-9]{10,15}" placeholder="contoh : 081350117035" required><br><br>
+
+            <label for="pekerjaan">Pekerjaan Orang Tua :</label>
+            <input type="text" id="pekerjaan" name="pekerjaan" required><br><br>
+
+            <label for="posisi">Posisi Bermain</label>
+            <select name="posisi" id="posisi" required>
+                <option value="">----pilih posisi----</option>
+                <option value="Penjaga Gawang">Penjaga Gawang</option>
+                <option value="Bek">Bek</option>
+                <option value="Gelandang">Gelandang</option>
+                <option value="Penyerang">Penyerang</option>
+            </select><br><br>
+
+            <label for="tinggi">Tinggi Badan (cm)</label>
+            <input type="number" id="tinggi" name="tinggi" required><br><br>
+
+            <label for="berat">Berat Badan (Kg)</label>
+            <input type="number" id="berat" name="berat" required><br><br>
+
+            <label for="penyakit">Riwayat Penyakit/ Alergi</label>
+            <textarea name="penyakit" id="penyakit" rows="3" placeholder="contoh : Alergi udang, Asma ringan saat cuaca dingin"></textarea><br><br>
+
+            <label for="cidera">Riwayat Cidera</label>
+            <textarea name="cidera" id="cidera" rows="3" placeholder="contoh : Pernah Cidera Lutut tahun 2023, sekarang sudah sembuh total"></textarea><br><br>
+
+            <label for="alumni">Riwayat SSB Sebelumnya</label>
+            <input type="text" id="alumni" name="alumni" required><br><br>            
+
+            <label for="prestasi">Prestasi</label>
+            <textarea name="prestasi" id="prestasi" rows="3" placeholder="Contoh: Juara 1 Turnamen U-12 tingkat Kota 2023 (kosongi kalau tidak ada)"></textarea><br><br>
+
+            <label for="foto">Upload Foto 3x4 <br>(Nama file foto yaitu nama kalian)</label>
+            <input type="file" id="foto" name="foto" accept="image/*" required><br><br>
+
+            <button type="reset">Reset</button><br>
+            <button type="submit">Simpan & Download Document</button>
+
+        </form>
+                
+    </body>
+</html>

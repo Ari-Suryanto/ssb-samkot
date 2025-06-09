@@ -447,3 +447,21 @@
     font-size: 16px; /* atau sesuaikan ukuran tulisan */
     font-weight: bold;
     }
+
+.daftar {
+    display: inline-block;
+        padding: 12px 24px;
+        font-size: 28px;
+        color: white;
+        background-color: #ff6600;
+        border: 2px solid white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: color 0.3s ease; /* biar efek smooth */
+}
+.daftar:hover {
+        color: green; /* tulisan jadi hijau saat hover */
+        border: 2px solid rgb(4, 78, 24);
+        background-color: #cc5200;
+    }

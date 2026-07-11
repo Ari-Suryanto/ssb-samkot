@@ -44,65 +44,60 @@
     }
 
     nav {
-        padding: 0px;
-        background-color: rgb(131, 220, 220);
-        display: flex;
-        align-items: center;
-        text-align: left;
-        z-index: 1000;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-        box-shadow: 0 4px 6px rgb(218, 248, 88);
-        max-width: 100%;
-        overflow-x: visible;
-    }
+    padding: 5px 10px;
+    background-color: rgb(131, 220, 220);
+    display: flex;
+    align-items: center;
+    text-align: left;
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 6px rgb(218, 248, 88);
+    box-sizing: border-box;
+	}
+	
     nav img {
-        margin-right: 5px;
-        margin-top: 0;
-        margin-bottom: 0;
-        width: 40px;
-        height: auto;
-		flex-shrink: 0;
-    }
+    margin-right: 10px;
+    width: 40px;
+    height: auto;
+    flex-shrink: 0;
+	}
+	
     nav ul {
-        list-style-type: none;
-        display: flex;
-        padding: 0;
-        justify-content: flex-start;
-        align-items: center;
-        flex-grow: 1;
-        margin: 0;
-        width: 100%;
-        box-sizing: border-box;
-        max-width: 100%;
-		overflow-x: auto;                  /* Mengizinkan scroll ke samping di HP */
-		white-space: nowrap;               /* Mencegah teks menu patah baris */
-		-webkit-overflow-scrolling: touch; /* Membuat scroll halus di HP */
-		scrollbar-width: none;             /* Sembunyikan scrollbar di Firefox */
-    }
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap; /* Membuat menu menyesuaikan lebar layar tanpa terpotong */
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    flex-grow: 1;
+    /* overflow-x DIHAPUS agar dropdown tidak terpotong secara vertikal */
+	}
 	/* Sembunyikan garis scrollbar di Chrome/Safari/Edge agar rapi */
 	nav ul::-webkit-scrollbar {
 		display: none;
 	}
 	
     nav ul li {
-        position: relative;
-        margin: 0;
-        display: inline-block;
-		flex-shrink: 0;
+    position: relative; /* Penting agar dropdown mengacu pada posisi li ini */
+    margin: 0;
+    display: inline-block;
+	}
+	
+	/* Penyesuaian khusus tampilan HP agar makin rapi */
+	@media (max-width: 768px) {
+    .spacer {
+        display: none; /* Hilangkan spacer di HP agar menu tidak terlalu renggang */
     }
+	
     nav ul li a {
-        text-decoration: none;
-        color: blue;
-        font-weight: bold;
-        font-size: 15px;
-        display: block;
-        margin-right: 20px;
-        padding: 5px 10px;
-        max-width: 100%;
+        margin-right: 5px;
+        padding: 5px 6px;
+        font-size: 13px; /* Ukuran teks sedikit diperkecil agar pas di HP */
     }
+	
     nav ul li ul.dropdown-menu {
         display: none;
         position: absolute;

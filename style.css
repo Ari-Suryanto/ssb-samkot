@@ -434,32 +434,49 @@
         display: none;
     }
     
-    /* Aktifkan scroll menyamping KHUSUS di HP */
+    /* 1. Kunci tinggi Navigasi agar TIDAK melar dan menutupi konten */
+    nav {
+        height: 60px;
+        flex-wrap: nowrap !important;
+    }
+
+    /* 2. Paksa menu utama tetap menyamping (Horizontal) & hilangkan titik (bullet) */
     ul.menu {
+        display: flex !important;
+        flex-direction: row !important;
+        list-style-type: none !important;
         overflow-x: auto; 
         scrollbar-width: none; 
         -webkit-overflow-scrolling: touch;
+        align-items: center;
+        margin: 0;
+        padding: 0;
     }
+    
     ul.menu::-webkit-scrollbar {
         display: none;
     }
 
-    /* PENTING: Lepas posisi relative agar dropdown tidak terpotong garis scroll */
     ul.menu > li {
-        position: static; 
+        position: static !important; 
+        flex-shrink: 0;
     }
 
     ul.menu > li > a {
-        padding: 10px;
-        font-size: 13px;
+        padding: 10px 12px;
+        font-size: 14px;
     }
 
-    /* Dropdown di HP membentang penuh mengikuti layar */
+    /* 3. Saat diklik, Dropdown Menu muncul tepat di bawah Navigasi, membentang selebar layar */
     .dropdown-menu {
-        width: 100%;
+        position: absolute !important;
+        top: 60px !important; /* Jatuh tepat di bawah batas tinggi nav (60px) */
+        left: 0 !important;
+        width: 100vw !important; /* Membentang selebar layar HP */
         border-top: 2px solid brown;
     }
 
+    /* Penyesuaian ukuran teks konten untuk HP */
     .sejarah-container {
         padding: 20px;
     }

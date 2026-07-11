@@ -43,7 +43,7 @@
 				-2px -2px 4px rgba(0, 0, 0, 0.15);    
 		}
 
-		/* --- NAVIGASI (LAPTOP & GENERAL) --- */
+		/* --- NAVIGASI (UMUM & LAPTOP) --- */
 		nav {
 			padding: 5px 10px;
 			background-color: rgb(131, 220, 220);
@@ -66,32 +66,34 @@
 			flex-shrink: 0;
 		}
 
-		nav ul {
+		/* Memastikan hanya uL utama (menu) yang diatur, bukan dropdown */
+		ul.menu {
 			list-style-type: none;
 			display: flex;
-			flex-wrap: wrap;
+			flex-wrap: nowrap; /* Menu dijaga lurus 1 baris, tidak turun ke bawah */
 			padding: 0;
 			margin: 0;
 			align-items: center;
 			flex-grow: 1;
 		}
 
-		nav ul li {
-			position: relative;
+		ul.menu > li {
+			position: relative; /* Menjadi patokan letak dropdown untuk laptop */
 			margin: 0;
-			display: inline-block;
+			flex-shrink: 0; /* Mencegah tombol gepeng */
 		}
 
-		nav ul li a {
+		ul.menu > li > a {
 			text-decoration: none;
 			color: blue;
 			font-weight: bold;
 			font-size: 15px;
 			display: block;
-			padding: 8px 12px;
+			padding: 10px 15px;
+			white-space: nowrap;
 		}
 
-		nav ul li a:hover {
+		ul.menu > li > a:hover {
 			color: rgb(54, 39, 39);
 		}
 
@@ -110,7 +112,7 @@
 			padding: 0;
 			margin: 0;
 			z-index: 9999 !important;
-			min-width: 160px;
+			min-width: 190px; /* Diperlebar sedikit agar teks panjang tidak keluar */
 			box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
 		}
 
@@ -118,19 +120,22 @@
 			display: block !important;
 		}
 
-		nav ul li:hover .dropdown-menu {
-			display: block;
+		/* Fitur hover otomatis hanya menyala di layar besar (Laptop) */
+		@media (min-width: 769px) {
+			ul.menu > li:hover .dropdown-menu {
+				display: block;
+			}
 		}
 
 		.dropdown-menu li {
-			margin: 0;
-			position: relative;
+			display: block; /* Mencegah teks sejajar ke samping seperti sebelumnya */
 			width: 100%;
+			border-bottom: 1px solid #e0cda7; /* Tambahan garis tipis pemisah menu */
 		}
 
 		.dropdown-menu li a {
 			display: block;
-			padding: 8px 12px;
+			padding: 10px 15px;
 			color: blue;
 			text-decoration: none;
 			white-space: nowrap;
@@ -422,31 +427,49 @@
 		}
 
 		/* ==========================================
-		   KHUSUS TAMPILAN HP / MOBILE (MAX 768px)
-		   ========================================== */
-		@media (max-width: 768px) {
-			.spacer {
-				display: none;
-			}
+   KHUSUS TAMPILAN HP / MOBILE (MAX 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    .spacer {
+        display: none;
+    }
+    
+    /* Aktifkan scroll menyamping KHUSUS di HP */
+    ul.menu {
+        overflow-x: auto; 
+        scrollbar-width: none; 
+        -webkit-overflow-scrolling: touch;
+    }
+    ul.menu::-webkit-scrollbar {
+        display: none;
+    }
 
-			nav ul li a {
-				padding: 5px 6px;
-				font-size: 13px;
-			}
+    /* PENTING: Lepas posisi relative agar dropdown tidak terpotong garis scroll */
+    ul.menu > li {
+        position: static; 
+    }
 
-			.sejarah-container {
-				padding: 20px;
-			}
+    ul.menu > li > a {
+        padding: 10px;
+        font-size: 13px;
+    }
 
-			.sejarah-container h1 {
-				font-size: 24px;
-			}
+    /* Dropdown di HP membentang penuh mengikuti layar */
+    .dropdown-menu {
+        width: 100%;
+        border-top: 2px solid brown;
+    }
 
-			.sejarah-container p {
-				font-size: 16px;
-			}
-
-			form {
-				width: 90%;
-			}
-		}
+    .sejarah-container {
+        padding: 20px;
+    }
+    .sejarah-container h1 {
+        font-size: 24px;
+    }
+    .sejarah-container p {
+        font-size: 16px;
+    }
+    form {
+        width: 90%;
+    }
+}

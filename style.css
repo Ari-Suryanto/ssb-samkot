@@ -122,16 +122,22 @@
         margin: 0;
         z-index: 9999 !important;
         width: auto;
+		min-width: 160px;
         overflow: visible;
         transform: translateZ(0);
         box-sizing: border-box;
         min-width: auto;
         
     }
+	
+	.dropdown-menu.show{
+		display: block !important;
+	}
     
     .dropdown-menu li {
         margin: 0;
         z-index: 1000;
+		position: relative;
     }
     .dropdown-menu li a {
         display: block;
@@ -446,22 +452,4 @@
     margin-top: 8px; /* kasih jarak dikit antara gambar dan teks */
     font-size: 16px; /* atau sesuaikan ukuran tulisan */
     font-weight: bold;
-    }
-
-.daftar {
-    display: inline-block;
-        padding: 12px 24px;
-        font-size: 28px;
-        color: white;
-        background-color: #ff6600;
-        border: 2px solid white;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: bold;
-        transition: color 0.3s ease; /* biar efek smooth */
-}
-.daftar:hover {
-        color: green; /* tulisan jadi hijau saat hover */
-        border: 2px solid rgb(4, 78, 24);
-        background-color: #cc5200;
     }

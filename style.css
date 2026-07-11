@@ -1,461 +1,452 @@
-    body {
-        margin: 0px 0 0 0;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
-        color: rgb(13, 3, 3);
-        text-align: center;
-        background-color: #dfe6e9;
-        padding: 0px;
-        
-        position: relative;
-        padding-top: 80px;
-    }
-    body, html {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-        height: 100%;
-        box-sizing: border-box;
-    }
-    .background {
-        width: 100%;
-        height: 100vh;
-        background-image: url('background.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        position: absolute;
-        z-index: -1;
-        position: fixed;
-    }
-    
-    .judul-utama {
-        margin: 7px auto;
-        color: #555;
-        text-shadow: 2px 2px 4px #aaa;
-        font-weight: bold;
-        font-size: 30px;
-        position: relative;
-        text-shadow: 
-        1px 1px 2px rgba(85, 85, 85, 0.2),
-        -1px -1px 2px rgba(85, 85, 85, 0.2),
-        2px 2px 4px rgba(0, 0, 0, 0.15),
-        -2px -2px 4px rgba(0, 0, 0, 0.15);    
-    }
+		body {
+			margin: 0;
+			font-family: Arial, Helvetica, sans-serif;
+			text-align: center;
+			color: rgb(13, 3, 3);
+			background-color: #dfe6e9;
+			padding: 0;
+			position: relative;
+			padding-top: 80px;
+		}
 
-    nav {
-    padding: 5px 10px;
-    background-color: rgb(131, 220, 220);
-    display: flex;
-    align-items: center;
-    text-align: left;
-    z-index: 1000;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    box-shadow: 0 4px 6px rgb(218, 248, 88);
-    box-sizing: border-box;
-	}
-	
-    nav img {
-    margin-right: 10px;
-    width: 40px;
-    height: auto;
-    flex-shrink: 0;
-	}
-	
-    nav ul {
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap; /* Membuat menu menyesuaikan lebar layar tanpa terpotong */
-    padding: 0;
-    margin: 0;
-    align-items: center;
-    flex-grow: 1;
-    /* overflow-x DIHAPUS agar dropdown tidak terpotong secara vertikal */
-	}
-	/* Sembunyikan garis scrollbar di Chrome/Safari/Edge agar rapi */
-	nav ul::-webkit-scrollbar {
-		display: none;
-	}
-	
-    nav ul li {
-    position: relative; /* Penting agar dropdown mengacu pada posisi li ini */
-    margin: 0;
-    display: inline-block;
-	}
-	
-	/* Penyesuaian khusus tampilan HP agar makin rapi */
-	@media (max-width: 768px) {
-    .spacer {
-        display: none; /* Hilangkan spacer di HP agar menu tidak terlalu renggang */
-    }
-	
-    nav ul li a {
-        margin-right: 5px;
-        padding: 5px 6px;
-        font-size: 13px; /* Ukuran teks sedikit diperkecil agar pas di HP */
-    }
-	
-    nav ul li ul.dropdown-menu {
-        display: none;
-        position: absolute;
-        left: 0;
-        top: 100%;
-        background-color: white;
-        padding: 0;
-        margin: 0;
-        list-style-type: none;
-        min-width: 150px;
-        z-index: 1;
-    }
-    nav ul li a:hover{
-        color: rgb(54, 39, 39);
-        display: block;
-    }
-    .spacer {
-        flex-grow: 1;
-    }
-    .dropdown-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: bisque !important;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        z-index: 9999 !important;
-        width: auto;
-		min-width: 160px;
-        overflow: visible;
-        transform: translateZ(0);
-        box-sizing: border-box;
-        min-width: auto;
-        
-    }
-	
-	.dropdown-menu.show{
-		display: block !important;
-	}
-    
-    .dropdown-menu li {
-        margin: 0;
-        z-index: 1000;
-		position: relative;
-    }
-    .dropdown-menu li a {
-        display: block;
-        padding: 5px 5px 5px 10px;
-        color: blue;
-        text-decoration: none;
-        margin: 0px;
-        z-index: 1000;
-    }
-    .dropdown-menu li a:hover {
-        color: black;
-        background-color: brown;
-        z-index: 1000;
-    }
-    nav ul li:hover .dropdown-menu {
-        display: block;
-        padding: 5px 10px 5px 5px;
-        z-index: 1000;
-    }
-    img {
-        display: block;
-        margin: 10px auto;
-        max-width: 100%;
-        height: auto;
-    }
-    .download-link {
-        color: blue;
-        text-decoration: underline;
-    }
-    .download-link:hover {
-        color: rgb(4, 4, 128);
-    }
-    nav, .image-slider {
-        position: relative;
-    }
-    div .image-slider {
-        z-index: 0;
-    }
-    .image-slider {
-        display: flex;
-        overflow: hidden;
-        white-space: nowrap;
-        width: 300vw;
-        animation: slide 30s linear infinite;
-    }
-    .image-slider img {
-        width: 33.33vw;
-        height: 70vh;
-        object-fit: contain;
-        padding: 0;
-        margin: 5px;
-       
-    }
-    @keyframes slide {
-        0% {transform: translateX(0%);}
-        100% {transform:translateX(-66.66vw)}
-    }
-    #Pendaftaran {
-        z-index: 0;
-        pointer-events: none;
-        color: rgb(247, 241, 241);
-        overflow:hidden;
-        width: 100%;
-        white-space: normal;
-        max-width: 100vw;
-        padding : 0 10px;
+		body, html {
+			margin: 0;
+			padding: 0;
+			overflow-x: hidden;
+			height: 100%;
+			box-sizing: border-box;
+		}
 
-    } 
-    #Pendaftaran a {
-        pointer-events: auto;
-    }
-    form {
-        width: 60%;
-        margin: 0 auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        border-color: rgb(218, 248, 88);
-        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-    }
-    label{
-        display: inline-block;
-        margin-bottom: 5px;
-        font-weight: bold;
-        padding: 10px;
-        font-size: 20px;
-        color: #010205;
-        border:#ccc;
-        background-color: #839ed8;
-        box-shadow: 3px 3px 10px (0, 0, 0, 0.5);
-        border-radius: 5px;
-        
-    }
-    input, textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-    }
-    button {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        background-color: #4c4F50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
+		.background {
+			width: 100%;
+			height: 100vh;
+			background-image: url('background.jpg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			z-index: -1;
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
 
-    }
-    button:hover {
-        background-color: #45a049;
-    }
-    h1 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .text-bordered {
-        font-size: 30px;
-        color: #f3f2f2;
-        text-shadow: 3px 3px 0 #000000,
-                    -2px -2px 0 #000000,
-                    2px -2px 0 #000000,
-                    -2px 2px 0 #000000;
-        font-weight: bold;
-        text-transform: uppercase;
-        max-width: 100%;
-        word-wrap: break-word;
-        white-space: normal;
-        overflow: hidden;
-    }
-    #harga {
-        display: inline-block;
-        margin-bottom: 5px;
-        font-weight: bold;
-        padding: 1px;
-        font-size: 20px;
-        color: #010205;
-        border:#ccc;
-        background-color: #e8e9ed;
-        box-shadow: 3px 3px 10px (0, 0, 0, 0.5);
-        border-radius: 5px;
-    }
-    .Jersey1 img {
-        width: 50%;
-        max-width: 100%;
-        height: auto;
-    }
-    .Jersey2 img {
-        width: 50%;
-        max-width: 100%;
-        height: auto;
-    }
-    
-    
-   .pengurus-list {
-        max-width: 800px;
-        margin: 30px auto;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-   }
+		.judul-utama {
+			margin: 7px auto;
+			color: #555;
+			font-weight: bold;
+			font-size: 30px;
+			position: relative;
+			text-shadow: 
+				1px 1px 2px rgba(85, 85, 85, 0.2),
+				-1px -1px 2px rgba(85, 85, 85, 0.2),
+				2px 2px 4px rgba(0, 0, 0, 0.15),
+				-2px -2px 4px rgba(0, 0, 0, 0.15);    
+		}
 
-   .pengurus-item {
-        display: flex;
-        align-items: center;
-        background-color: rgba(255, 255, 255, 0.8);
-        padding: 10px 20px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-   }
+		/* --- NAVIGASI (LAPTOP & GENERAL) --- */
+		nav {
+			padding: 5px 10px;
+			background-color: rgb(131, 220, 220);
+			display: flex;
+			align-items: center;
+			text-align: left;
+			z-index: 1000;
+			position: fixed;
+			width: 100%;
+			top: 0;
+			left: 0;
+			box-shadow: 0 4px 6px rgb(218, 248, 88);
+			box-sizing: border-box;
+		}
 
-   .foto-pengurus {
-        width: 75px;
-        height: 100px;
-        object-fit: cover;
-        border-radius: 5px;
-        border: 2px solid red;
-      
-   }
+		nav img {
+			margin-right: 10px;
+			width: 40px;
+			height: auto;
+			flex-shrink: 0;
+		}
 
-   .info-pengurus {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        font-size: 18px;
-   }
+		nav ul {
+			list-style-type: none;
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0;
+			margin: 0;
+			align-items: center;
+			flex-grow: 1;
+		}
 
-   .nama-pengurus {
-        font-weight: bold;
-        flex: 1;
-   }
+		nav ul li {
+			position: relative;
+			margin: 0;
+			display: inline-block;
+		}
 
-   .jabatan {
-        text-align: right;
-        flex: 1;
-        color: #444;
-   }
+		nav ul li a {
+			text-decoration: none;
+			color: blue;
+			font-weight: bold;
+			font-size: 15px;
+			display: block;
+			padding: 8px 12px;
+		}
 
-   .sejarah-container {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 30px 50px;
-    background-color: #ffffffdd;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    text-align: justify;
-    line-height: 1.8;
-    font-size: 17px;
-    color: #2d3436;
-    margin-bottom: 50px;
-    box-sizing: border-box;
-    }
+		nav ul li a:hover {
+			color: rgb(54, 39, 39);
+		}
 
-    .judul-sejarah {
-        font-size: 32px;
-        color: #2c3e50;
-        text-align: center;
-        margin-bottom: 30px;
-        text-shadow: 1px 1px 2px #ccc;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
+		.spacer {
+			flex-grow: 1;
+		}
 
-    
+		/* --- DROPDOWN MENU --- */
+		.dropdown-menu {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			background-color: bisque !important;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			z-index: 9999 !important;
+			min-width: 160px;
+			box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+		}
 
-    .sejarah-container p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    text-align: justify;
-    padding-left: 15px;
-    padding-right: 15px;
-    text-indent: 40px;
-    }
+		.dropdown-menu.show {
+			display: block !important;
+		}
 
-    @media (max-width: 768px) {
-    .sejarah-container {
-        padding: 20px;
-    }
+		nav ul li:hover .dropdown-menu {
+			display: block;
+		}
 
-    .sejarah-container h1 {
-        font-size: 24px;
-    }
+		.dropdown-menu li {
+			margin: 0;
+			position: relative;
+			width: 100%;
+		}
 
-    .sejarah-container p {
-        font-size: 16px;
-    }
-    }
+		.dropdown-menu li a {
+			display: block;
+			padding: 8px 12px;
+			color: blue;
+			text-decoration: none;
+			white-space: nowrap;
+		}
 
-.sponsor-logos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-}
+		.dropdown-menu li a:hover {
+			color: white;
+			background-color: brown;
+		}
 
-.sponsor-logos img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    object-fit: contain;
-    margin: 0 auto;
-}
+		/* --- ELEMENT LAINNYA --- */
+		img {
+			display: block;
+			margin: 10px auto;
+			max-width: 100%;
+			height: auto;
+		}
 
-.footer-catatan {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* semi transparan */
-    color: white;
-    padding: 3px 8px;
-    font-size: 16px;
-    z-index: 1000;
-    line-height: 0.5;
-    font-weight: bold;
-    }
-.footer-catatan a {
-    color: #daf606; /* warna link */
-    text-decoration: none;
-    }
-.footer-catatan a:hover {
-    text-decoration: underline;
-    }
+		.download-link {
+			color: blue;
+			text-decoration: underline;
+		}
 
-.tempat-latihan {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-}
+		.download-link:hover {
+			color: rgb(4, 4, 128);
+		}
 
-.lapangan img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    object-fit: contain;
-    margin: 0 auto;
-    }
+		/* SLIDER */
+		.image-slider {
+			display: flex;
+			overflow: hidden;
+			white-space: nowrap;
+			width: 300vw;
+			animation: slide 30s linear infinite;
+			z-index: 0;
+		}
 
-.lapangan p {
-    margin-top: 8px; /* kasih jarak dikit antara gambar dan teks */
-    font-size: 16px; /* atau sesuaikan ukuran tulisan */
-    font-weight: bold;
-    }
+		.image-slider img {
+			width: 33.33vw;
+			height: 70vh;
+			object-fit: contain;
+			padding: 0;
+			margin: 5px;
+		}
+
+		@keyframes slide {
+			0% { transform: translateX(0%); }
+			100% { transform: translateX(-66.66vw); }
+		}
+
+		/* FORM PENDAFTARAN */
+		#Pendaftaran {
+			z-index: 0;
+			pointer-events: none;
+			color: rgb(247, 241, 241);
+			overflow: hidden;
+			width: 100%;
+			white-space: normal;
+			max-width: 100vw;
+			padding: 0 10px;
+		} 
+
+		#Pendaftaran a {
+			pointer-events: auto;
+		}
+
+		form {
+			width: 60%;
+			margin: 0 auto;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+			border-color: rgb(218, 248, 88);
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+		}
+
+		label {
+			display: inline-block;
+			margin-bottom: 5px;
+			font-weight: bold;
+			padding: 10px;
+			font-size: 20px;
+			color: #010205;
+			background-color: #839ed8;
+			border-radius: 5px;
+		}
+
+		input, textarea {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 20px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-sizing: border-box;
+		}
+
+		button {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			background-color: #4c4F50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		button:hover {
+			background-color: #45a049;
+		}
+
+		h1 {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		.text-bordered {
+			font-size: 30px;
+			color: #f3f2f2;
+			text-shadow: 3px 3px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+			font-weight: bold;
+			text-transform: uppercase;
+			max-width: 100%;
+			word-wrap: break-word;
+		}
+
+		#harga {
+			display: inline-block;
+			margin-bottom: 5px;
+			font-weight: bold;
+			padding: 1px;
+			font-size: 20px;
+			color: #010205;
+			background-color: #e8e9ed;
+			border-radius: 5px;
+		}
+
+		.Jersey1 img, .Jersey2 img {
+			width: 50%;
+			max-width: 100%;
+			height: auto;
+		}
+
+		/* PENGURUS */
+		.pengurus-list {
+			max-width: 800px;
+			margin: 30px auto;
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+
+		.pengurus-item {
+			display: flex;
+			align-items: center;
+			background-color: rgba(255, 255, 255, 0.8);
+			padding: 10px 20px;
+			border-radius: 10px;
+			box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.foto-pengurus {
+			width: 75px;
+			height: 100px;
+			object-fit: cover;
+			border-radius: 5px;
+			border: 2px solid red;
+		}
+
+		.info-pengurus {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 100%;
+			font-size: 18px;
+		}
+
+		.nama-pengurus {
+			font-weight: bold;
+			flex: 1;
+		}
+
+		.jabatan {
+			text-align: right;
+			flex: 1;
+			color: #444;
+		}
+
+		/* SEJARAH */
+		.sejarah-container {
+			max-width: 800px;
+			margin: 30px auto;
+			padding: 30px 50px;
+			background-color: #ffffffdd;
+			border-radius: 10px;
+			box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+			text-align: justify;
+			line-height: 1.8;
+			font-size: 17px;
+			color: #2d3436;
+			margin-bottom: 50px;
+			box-sizing: border-box;
+		}
+
+		.judul-sejarah {
+			font-size: 32px;
+			color: #2c3e50;
+			text-align: center;
+			margin-bottom: 30px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+		.sejarah-container p {
+			font-size: 16px;
+			margin-bottom: 20px;
+			text-align: justify;
+			padding-left: 15px;
+			padding-right: 15px;
+			text-indent: 40px;
+		}
+
+		/* SPONSOR & LAPANGAN */
+		.sponsor-logos {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 20px;
+			padding: 20px;
+			max-width: 900px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		.sponsor-logos img {
+			width: 100%;
+			max-width: 200px;
+			height: auto;
+			object-fit: contain;
+			margin: 0 auto;
+		}
+
+		.tempat-latihan {
+			display: grid;
+			grid-template-columns: repeat(1, 1fr);
+			gap: 20px;
+			padding: 20px;
+			max-width: 900px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		.lapangan img {
+			width: 100%;
+			max-width: 300px;
+			height: auto;
+			object-fit: contain;
+			margin: 0 auto;
+		}
+
+		.lapangan p {
+			margin-top: 8px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+
+		/* FOOTER */
+		.footer-catatan {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			background-color: rgba(0, 0, 0, 0.7);
+			color: white;
+			padding: 3px 8px;
+			font-size: 16px;
+			z-index: 1000;
+			line-height: 1.2;
+			font-weight: bold;
+		}
+
+		.footer-catatan a {
+			color: #daf606;
+			text-decoration: none;
+		}
+
+		.footer-catatan a:hover {
+			text-decoration: underline;
+		}
+
+		/* ==========================================
+		   KHUSUS TAMPILAN HP / MOBILE (MAX 768px)
+		   ========================================== */
+		@media (max-width: 768px) {
+			.spacer {
+				display: none;
+			}
+
+			nav ul li a {
+				padding: 5px 6px;
+				font-size: 13px;
+			}
+
+			.sejarah-container {
+				padding: 20px;
+			}
+
+			.sejarah-container h1 {
+				font-size: 24px;
+			}
+
+			.sejarah-container p {
+				font-size: 16px;
+			}
+
+			form {
+				width: 90%;
+			}
+		}

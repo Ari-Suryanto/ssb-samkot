@@ -59,11 +59,12 @@
         overflow-x: visible;
     }
     nav img {
-        margin-right: 1px;
+        margin-right: 5px;
         margin-top: 0;
         margin-bottom: 0;
-        width: 5%;
-        height: 3%;
+        width: 40px;
+        height: auto;
+		flex-shrink: 0;
     }
     nav ul {
         list-style-type: none;
@@ -76,11 +77,21 @@
         width: 100%;
         box-sizing: border-box;
         max-width: 100%;
+		overflow-x: auto;                  /* Mengizinkan scroll ke samping di HP */
+		white-space: nowrap;               /* Mencegah teks menu patah baris */
+		-webkit-overflow-scrolling: touch; /* Membuat scroll halus di HP */
+		scrollbar-width: none;             /* Sembunyikan scrollbar di Firefox */
     }
+	/* Sembunyikan garis scrollbar di Chrome/Safari/Edge agar rapi */
+	nav ul::-webkit-scrollbar {
+		display: none;
+	}
+	
     nav ul li {
         position: relative;
         margin: 0;
         display: inline-block;
+		flex-shrink: 0;
     }
     nav ul li a {
         text-decoration: none;

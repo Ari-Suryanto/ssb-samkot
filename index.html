@@ -1,58 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SSB SAMKOT - Sekolah Sepak Bola Samarinda | Info Jadwal & Pendaftaran</title>
-        <meta name="description" content="SSB Samkot, sekolah sepak bola di Samarinda yang menyediakan pelatihan profesional untuk anak-anak usia 9-12 tahun. Daftar sekarang!">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1 class="judul-utama">SEKOLAH SEPAK BOLA SAMARINDA KOTA (SSB SAMKOT)</h1>
-        <div class="background"></div>
-        <nav>
-            <img src="logosamkot.png" alt="logo">
-            <ul class="menu">
-                <li><a href="index.html">Beranda</a></li>
-                <li class="spacer"></li>
-                <li><a href="index.html">Klub &#9662;</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="Sejarah.html">Sejarah</a></li>
-                        <li><a href="Pengurus.html">Pengurus dan Pelatih</a></li>
-                        <li><a href="Tempat-Latihan.html">Tempat Latihan</a></li>
-                        <li><a href="Sponsor.html">Mitra dan Sponsor</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="index.html">Tim &#9662;</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="U9.html">U-9</a></li>
-                        <li><a href="U10.html">U-10</a></li>
-                        <li><a href="U11.html">U-11</a></li>
-                        <li><a href="U12.html">U-12</a></li>
-                    </ul>
-                </li>
-                <li><a href="JadwalLatihan.html">Jadwal Latihan</a></li>
-                <li><a href="Pendaftaran.html">Pendaftaran</a></li>
-                <li><a href="Jersey.html">Jersey</a></li>
-                <li class="spacer"></li>
-            </ul>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSB SAMKOT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="judul-utama">SEKOLAH SEPAK BOLA SAMARINDA KOTA (SSB SAMKOT)</h1>
+    <div class="background"></div>
+    
+    <nav>
+        <img src="logosamkot.png" alt="Logo SSB Samkot">
+        <ul class="menu">
+            <li><a href="index.html">Beranda</a></li>
+            <li class="spacer"></li>
             
-        </nav>
-        <div class="image-slider" id="slider-beranda">
-            <img src="1.jpg" alt="Foto kegiatan latihan SSB SAMKOT 1">
-            <img src="2.jpg" alt="Foto kegiatan latihan SSB SAMKOT 2">
-            <img src="jadwal foto samkot.jpg" alt="Jadwal latihan SSB SAMKOT">
-            <img src="1.jpg" alt="Foto kegiatan latihan SSB SAMKOT 1">
-            <img src="2.jpg" alt="Foto kegiatan latihan SSB SAMKOT 2">
-            <img src="jadwal foto samkot.jpg" alt="Jadwal latihan SSB SAMKOT">
-        </div>
+            <!-- Ditambahkan class="dropdown" agar konsisten -->
+            <li class="dropdown">
+                <a href="Klub.html">Klub &#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="Sejarah.html">Sejarah</a></li>
+                    <li><a href="Pengurus.html">Pengurus dan Pelatih</a></li>
+                    <li><a href="Tempat-Latihan.html">Tempat Latihan</a></li>
+                    <li><a href="Sponsor.html">Mitra dan Sponsor</a></li>
+                </ul>
+            </li>
+            
+            <li class="dropdown">
+                <a href="Tim.html">Tim &#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="U9.html">U-9</a></li>
+                    <li><a href="U10.html">U-10</a></li>
+                    <li><a href="U11.html">U-11</a></li>
+                    <li><a href="U12.html">U-12</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="JadwalLatihan.html">Jadwal Latihan</a></li>
+            <li><a href="Pendaftaran.html">Pendaftaran</a></li>
+            <li><a href="Jersey.html">Jersey</a></li>
+            <li class="spacer"></li>
+        </ul>
+    </nav>
 
-        <footer class="footer-catatan">
-            <p>FACEBOOK: <a href="https://web.facebook.com/ssb.samkot?locale=id_ID" target="_blank">KLIK DI SINI</a></p>
-            <p>INSTAGRAM: <a href="https://www.instagram.com/ssbsamkot/" target="_blank">KLIK DI SINI</a></p>
-            <p>Contact Person: 085345414318 (M SAIIN)</p>
-        </footer>
-        
-    </body>
+    <div class="image-slider" id="slider-beranda">
+        <img src="1.jpg" alt="Kegiatan 1">
+        <img src="2.jpg" alt="Kegiatan 2">
+        <img src="jadwal foto samkot.jpg" alt="Jadwal Samkot">
+        <img src="1.jpg" alt="Kegiatan 1">
+        <img src="2.jpg" alt="Kegiatan 2">
+        <img src="jadwal foto samkot.jpg" alt="Jadwal Samkot">
+    </div>
+
+    <footer class="footer-catatan">
+        <p>FACEBOOK: <a href="https://web.facebook.com/ssb.samkot?locale=id_ID" target="_blank">KLIK DI SINI</a></p>
+        <p>INSTAGRAM: <a href="https://www.instagram.com/ssbsamkot/" target="_blank">KLIK DI SINI</a></p>
+        <p>Contact Person: 085345414318 (M SAIIN)</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownParents = document.querySelectorAll('.menu > li');
+
+            dropdownParents.forEach(function (parent) {
+                const trigger = parent.querySelector('a');
+                const dropdown = parent.querySelector('.dropdown-menu');
+
+                if (dropdown) {
+                    trigger.addEventListener('click', function (e) {
+                        e.preventDefault(); 
+                        
+                        // Tutup dropdown lain yang sedang terbuka
+                        document.querySelectorAll('.dropdown-menu.show').forEach(function (openMenu) {
+                            if (openMenu !== dropdown) {
+                                openMenu.classList.remove('show');
+                            }
+                        });
+
+                        // Toggle class 'show'
+                        dropdown.classList.toggle('show');
+                    });
+                }
+            });
+
+            // Tutup dropdown jika klik di luar .menu
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.menu')) {
+                    document.querySelectorAll('.dropdown-menu.show').forEach(function (openMenu) {
+                        openMenu.classList.remove('show');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
 </html>

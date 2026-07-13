@@ -201,6 +201,28 @@
 		#Pendaftaran a {
 			pointer-events: auto;
 		}
+		.daftar {
+			display: inline-block;
+			margin: 20px auto;
+			padding: 14px 32px;
+			background-color: #27ae60; /* Warna hijau tombol pendaftaran */
+			color: #ffffff !important;   /* Teks warna putih */
+			font-size: 20px;
+			font-weight: bold;
+			text-decoration: none !important; /* Menghilangkan garis bawah link */
+			border-radius: 8px; /* Sudut membulat */
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Bayangan agar timbul */
+			transition: all 0.3s ease;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+		
+		/* Efek saat tombol di-hover (disentuh kursor) */
+		.daftar:hover {
+			background-color: #219150; /* Warna hijau sedikit lebih gelap */
+			transform: translateY(-3px); /* Efek tombol naik sedikit saat dikursor */
+			box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+		}
 
 		form {
 			width: 60%;

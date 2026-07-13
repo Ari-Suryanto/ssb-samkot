@@ -61,7 +61,8 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const dropdownParents = document.querySelectorAll('.menu > li');
+            // Hanya targetkan li yang memiliki class dropdown
+            const dropdownParents = document.querySelectorAll('.menu > li.dropdown');
 
             dropdownParents.forEach(function (parent) {
                 const trigger = parent.querySelector('a');
@@ -69,22 +70,27 @@
 
                 if (dropdown) {
                     trigger.addEventListener('click', function (e) {
-                        e.preventDefault(); 
-                        
-                        // Tutup dropdown lain yang sedang terbuka
-                        document.querySelectorAll('.dropdown-menu.show').forEach(function (openMenu) {
-                            if (openMenu !== dropdown) {
-                                openMenu.classList.remove('show');
-                            }
-                        });
+                        // Jika menu dropdown belum terbuka
+                        if (!dropdown.classList.contains('show')) {
+                            e.preventDefault(); // Cegah pindah halaman untuk klik pertama
+                            
+                            // Tutup dropdown lain yang sedang terbuka
+                            document.querySelectorAll('.dropdown-menu.show').forEach(function (openMenu) {
+                                if (openMenu !== dropdown) {
+                                    openMenu.classList.remove('show');
+                                }
+                            });
 
-                        // Toggle class 'show'
-                        dropdown.classList.toggle('show');
+                            // Tampilkan dropdown yang diklik
+                            dropdown.classList.add('show');
+                        }
+                        // Jika dropdown sudah 'show', e.preventDefault() tidak dijalankan, 
+                        // sehingga klik kedua akan membawa user ke halaman Klub.html / Tim.html
                     });
                 }
             });
 
-            // Tutup dropdown jika klik di luar .menu
+            // Tutup dropdown jika area di luar menu diklik
             document.addEventListener('click', function (e) {
                 if (!e.target.closest('.menu')) {
                     document.querySelectorAll('.dropdown-menu.show').forEach(function (openMenu) {
@@ -94,5 +100,5 @@
             });
         });
     </script>
-</body>
+	</body>
 </html>
